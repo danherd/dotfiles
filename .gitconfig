@@ -1,0 +1,18 @@
+[user]
+name = Dan Herd
+email = dev@danherd.com
+signingkey =
+[core]
+editor = nano
+[init]
+defaultBranch = main
+[commit]
+gpgsign = true
+[gpg]
+format = ssh
+[gpg "ssh"]
+allowedSignersFile = ~/.ssh/allowed_signers
+[push]
+autoSetupRemote = true
+[pull]
+ff = only
