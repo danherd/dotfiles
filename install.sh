@@ -7,15 +7,16 @@ echo "************************\n"
 
 printf "Checking if Oh My Zsh is installed..."
 if ! [ -d "$HOME/.oh-my-zsh" ]; then
-  echo " Not installed - installing..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  printf " Not installed - installing..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" >/dev/null 2>&1
   echo " Done"
 else echo " Already installed"; fi
 
 printf "Checking if Homebrew is installed..."
 if ! [ "$(command -v brew)" ]; then
-  echo " Not installed - installing..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  printf " Not installed - installing (might prompt for sudo password)..."
+  sudo true
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" >/dev/null 2>&1
   echo " Done"
 else echo " Already installed"; fi
 
@@ -26,8 +27,8 @@ echo " Done"
 
 printf "Checking if NVM is installed..."
 if ! [ -d "$HOME/.nvm" ]; then
-  echo " Not installed - installing..."
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+  printf " Not installed - installing..."
+  curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash >/dev/null 2>&1
   echo " Done"
 else echo " Already installed"; fi
 
@@ -55,6 +56,6 @@ echo "* $(<""$HOME""/.ssh/id_ed25519.pub)" >"$HOME/.ssh/allowed_signers"
 git config --global user.signingkey "$(<""$HOME""/.ssh/id_ed25519.pub)"
 echo " Done"
 
-echo "\nScript complete! Reloading shell...\n\n"
+echo "\nScript complete! Reloading shell...\n"
 
 zsh "$HOME/.zshrc"
