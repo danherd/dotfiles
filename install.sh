@@ -35,12 +35,9 @@ brew install -q python@3.11 git awscli nano nanorc ripgrep archey4 >>install.log
 brew upgrade -q >>install.log 2>&1
 echo " Done"
 
-printf "Checking if NVM is installed..."
-if ! [ -d "$HOME/.nvm" ]; then
-  printf " Not installed - installing..."
-  curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash >>install.log 2>&1
-  echo " Done"
-else echo " Already installed"; fi
+printf "Installing / updating NVM..."
+curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash >>install.log 2>&1
+echo " Done"
 
 printf "Linking / copying config files..."
 ln -sF "$THIS_DIR/.zshrc" "$HOME/.zshrc"
