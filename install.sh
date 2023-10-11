@@ -35,7 +35,7 @@ brew install -q python@3.11 git awscli nano nanorc ripgrep archey4 >>install.log
 brew upgrade -q >>install.log 2>&1
 echo " Done"
 
-printf "Installing / updating NVM..."
+printf "Installing / updating nvm..."
 curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash >>install.log 2>&1
 echo " Done"
 
