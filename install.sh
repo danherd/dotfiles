@@ -24,11 +24,15 @@ if ! [ "$(command -v brew)" ]; then
   sudo true
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" >>install.log 2>&1
   echo " Done"
-else echo " Already installed"; fi
+else
+  printf " Already installed - updating..."
+  brew update -q >>install.log 2>&1
+  echo " Done"
+fi
 
 printf "Installing / updating Homebrew packages..."
-brew upgrade -q >>install.log 2>&1
 brew install -q python@3.11 git awscli nano nanorc ripgrep archey4 >>install.log 2>&1
+brew upgrade -q >>install.log 2>&1
 echo " Done"
 
 printf "Checking if NVM is installed..."
