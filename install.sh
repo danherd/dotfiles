@@ -12,7 +12,11 @@ if ! [ -d "$HOME/.oh-my-zsh" ]; then
   printf " Not installed - installing..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" >>install.log 2>&1
   echo " Done"
-else echo " Already installed"; fi
+else
+  printf " Already installed - updating..."
+  zsh -ic "omz update" >>install.log 2>&1
+  echo " Done"
+fi
 
 printf "Checking if Homebrew is installed..."
 if ! [ "$(command -v brew)" ]; then
