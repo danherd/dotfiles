@@ -4,9 +4,9 @@ Just navigate inside and execute `./install.sh`
 
 Does the following:
 
-- Installs [Oh My Zsh](https://ohmyz.sh/) (if it isn't already installed)
-- Installs [Homebrew](https://brew.sh/) (if it isn't already installed)
-- Installs / updates the following Homebrew packages:
+- Installs or updates [Oh My Zsh](https://ohmyz.sh/).
+- Installs or updates [Homebrew](https://brew.sh/).
+- Installs or updates the following Homebrew packages (and updates any other Homebrew packages installed):
   - python@3.11
   - git
   - awscli
@@ -14,7 +14,7 @@ Does the following:
   - nanorc
   - ripgrep
   - archey4
-- Installs [nvm (Node Version manager)](https://github.com/nvm-sh/nvm) (if it isn't already installed)
+- Installs or updates [nvm (Node Version manager)](https://github.com/nvm-sh/nvm)
 - Symlinks or copies various config files into the home folder
 - Creates an EdDSA SSH key pairing (if it doesn't already exist)
 - Adds SSH key to SSH agent and Git signing configuration
