@@ -1,6 +1,6 @@
 # Dan's Mac Install Script
 
-Just navigate inside and execute `./install.sh`
+Just clone into your `$HOME` folder (e.g. `/Users/dan`), navigate inside and execute `./install.sh`
 
 Does the following:
 
