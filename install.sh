@@ -31,7 +31,7 @@ else
 fi
 
 printf "Installing / updating Homebrew packages..."
-brew install -q python@3.11 git awscli nano nanorc ripgrep archey4 >>install.log 2>&1
+brew install -q python@3.11 git awscli pyenv nano nanorc ripgrep archey4 direnv >>install.log 2>&1
 brew upgrade -q >>install.log 2>&1
 echo " Done"
 
